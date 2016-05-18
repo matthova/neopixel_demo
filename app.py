@@ -18,7 +18,6 @@ strip.begin()
 
 @app.route('/', methods=['GET'])
 def root():
-    strip.setPixelColor(10, Color(255, 0, 0))
     return app.send_static_file('index.html')
 
 @app.route('/', methods=['POST'])
