@@ -1,0 +1,72 @@
+// Imports
+@import 'normalize.scss';
+@import 'fonts.scss';
+
+
+// Variables
+
+$font-size: 16px;
+
+$bg: #fff;
+$dark-text: #999;
+
+$font-stack: "Lato", sans-serif;
+
+
+// Mixins
+
+@mixin center() {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+
+// Styling
+
+
+body {
+  font-size: $font-size;
+  background: $bg;
+  font-family: $font-stack;
+  font-weight: 400;
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/479554/circle4.svg"), pointer;
+}
+
+.bg {
+  @include center();
+  width: 100vw;
+  height: 100vh;
+  background: $bg;
+}
+
+.color {
+  @include center();
+  -webkit-user-select: none;
+  font-size: 1.5em;
+  height: 2.25em;
+  width: 18em;
+  height: 2.25em;
+  line-height: 2.25em;
+  color: $dark-text;
+  display: inline;
+  text-align: center;
+  letter-spacing: 2px;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+  opacity: 0;
+  display: inline;
+}
+
+.color:before {
+  content: 'hsl ( ';
+  opacity: .5;
+}
+
+.color:after {
+  content: ' )';
+  opacity: .5;
+}
